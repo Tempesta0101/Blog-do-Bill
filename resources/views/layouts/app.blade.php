@@ -121,7 +121,18 @@
     </style>
 </head>
 <body>
+    
     <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('/') }}">Blog do Bil</a>
+
+        <form action="{{ route('posts.buscar') }}" method="GET" class="d-flex ms-auto">
+            <input type="text" name="termo" class="form-control me-2" placeholder="Buscar...">
+            <button type="submit" class="btn btn-outline-primary">Buscar</button>
+        </form>
+    </div>
+</nav>
         <div class="container">
             <div class="header-content">
                 <div class="logo">Blog do Bil</div>

@@ -26,4 +26,16 @@ class PostController extends Controller
 
         return view('posts.show', compact('post'));
     }
+    public function buscar(Request $request)
+    {
+    $request->validate([
+        'termo' => 'required|min:3',
+    ]);
+
+    $termo = $request->input('termo');
+    $posts = Post::buscar($termo)->get();
+
+    return view('posts.resultados', compact('posts', 'termo'));
+    }
+
 }

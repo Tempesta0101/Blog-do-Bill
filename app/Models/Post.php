@@ -40,4 +40,10 @@ class Post extends Model
     {
         return $query->orderBy('created_at', 'desc');
     }
+    public function scopeBuscar($query, $termo)
+    {
+    return $query->where('titulo', 'LIKE', "%{$termo}%")
+                 ->orWhere('conteudo', 'LIKE', "%{$termo}%");
+    }
+
 }

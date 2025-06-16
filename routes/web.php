@@ -15,3 +15,4 @@ Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show')
 // Rotas das categorias
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/buscar', [PostController::class, 'buscar'])->name('posts.buscar');
